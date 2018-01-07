@@ -1,8 +1,14 @@
+//! # Minigrep
+//! 
+//! `Minigrep` is a small utility that can find a text in a specific file.
+
+
 use std::error::Error;
 use std::env;
 use std::fs::File;
 use std::io::prelude::*;
 
+/// This structure holds the arguments from the command line
 pub struct Config {
   pub query: String,
   pub filename: String,
@@ -29,6 +35,7 @@ impl Config {
   }
 }
 
+/// Main entry function that needs a `Config` in order to work propely
 pub fn run(config: Config) -> Result<(), Box<Error>> {
   let mut f = File::open(config.filename)?;
   let mut contents = String::new();
