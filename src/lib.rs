@@ -2,7 +2,6 @@
 //! 
 //! `Minigrep` is a small utility that can find a text in a specific file.
 
-
 use std::error::Error;
 use std::env;
 use std::fs::File;
